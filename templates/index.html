@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sooraj Aryan Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Sooraj Aryan</h1>
+        <p>Welcome to my portfolio</p>
+    </header>
+
+    <section id="links">
+        <h2>Connect with me</h2>
+        <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank">LinkedIn</a>
+        <a href="https://github.com/YOUR_GITHUB" target="_blank">GitHub</a>
+        <a href="https://x.com/YOUR_X" target="_blank">X</a>
+        <a href="https://YOUR_PROJECT_LINK" target="_blank">Projects</a>
+        <a href="https://YOUR_RESUME_LINK" target="_blank">Resume</a>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="flash {{ category }}">{{ message }}</div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+        <form method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Sooraj Aryan</p>
+    </footer>
+</body>
+</html>
