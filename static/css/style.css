@@ -67,6 +67,6 @@ button:hover {
 }
 
 .flash.success {
-    color: green;
+    color: red;
     margin-bottom: 1rem;
 }
